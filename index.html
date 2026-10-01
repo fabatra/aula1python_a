@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Guia de Estudos e Desafios: Python & Robótica</title>
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #0f172a;
+            color: #f8fafc;
+            line-height: 1.6;
+            margin: 0;
+            padding: 20px;
+        }
+        .container {
+            max-width: 950px;
+            margin: 0 auto;
+        }
+        .header {
+            background: linear-gradient(135deg, #1e293b, #0f172a);
+            border: 1px solid #334155;
+            padding: 30px;
+            border-radius: 12px;
+            text-align: center;
+            margin-bottom: 25px;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.3);
+        }
+        .header h1 {
+            color: #38bdf8;
+            margin: 0 0 10px 0;
+            font-size: 2em;
+        }
+        .header p {
+            color: #94a3b8;
+            margin: 0;
+            font-size: 1.1em;
+        }
+        .card {
+            background-color: #1e293b;
+            border: 1px solid #334155;
+            border-radius: 12px;
+            padding: 25px;
+            margin-bottom: 25px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+        }
+        h2 {
+            color: #38bdf8;
+            border-bottom: 2px solid #334155;
+            padding-bottom: 8px;
+            margin-top: 0;
+            font-size: 1.4em;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        h3 {
+            color: #f1f5f9;
+            margin-top: 15px;
+            font-size: 1.15em;
+        }
+        p, li {
+            color: #cbd5e1;
+            font-size: 1.05em;
+        }
+        .instruction-box {
+            background-color: #0369a1;
+            border-left: 5px solid #38bdf8;
+            padding: 15px;
+            border-radius: 0 8px 8px 0;
+            margin: 15px 0;
+            color: #ffffff;
+            font-size: 1.05em;
+        }
+        .robotics-note {
+            background-color: #14532d;
+            border-left: 5px solid #22c55e;
+            padding: 12px 16px;
+            border-radius: 0 6px 6px 0;
+            margin: 15px 0;
+            color: #f0fdf4;
+            font-size: 0.95em;
+        }
+        .robotics-note strong {
+            color: #4ade80;
+        }
+        .challenge-card {
+            background-color: #1e1b4b;
+            border: 1px solid #4338ca;
+            border-radius: 10px;
+            padding: 20px;
+            margin-bottom: 20px;
+        }
+        .challenge-title {
+            color: #a5b4fc;
+            font-size: 1.2em;
+            font-weight: bold;
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        .rules-list {
+            background-color: #0f172a;
+            border: 1px dashed #6366f1;
+            border-radius: 8px;
+            padding: 15px 15px 15px 35px;
+            margin-top: 10px;
+        }
+        .rules-list li {
+            margin-bottom: 8px;
+        }
+        .expected-output {
+            background-color: #090d16;
+            color: #38bdf8;
+            padding: 12px;
+            border-radius: 6px;
+            font-family: 'Consolas', 'Fira Code', monospace;
+            font-size: 0.95em;
+            margin-top: 10px;
+            border: 1px solid #334155;
+        }
+        @media print {
+            body {
+                background-color: #ffffff;
+                color: #000000;
+                padding: 0;
+            }
+            .card, .challenge-card {
+                background-color: #ffffff;
+                border: 1px solid #cccccc;
+                color: #000000;
+                box-shadow: none;
+            }
+            .instruction-box, .robotics-note {
+                background-color: #f8fafc;
+                color: #000000;
+                border-left-color: #000000;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+
+    <div class="header">
+        <h1>🤖 Caderno de Exercícios: Python & Robótica</h1>
+        <p>Aprenda a Lógica dos Robôs com Desafios Práticos no Programiz</p>
+    </div>
+
+    <!-- ETAPA 1: AMBIENTE DE TRABALHO -->
+    <div class="card">
+        <h2>1️⃣ Preparando o Seu Ambiente de Testes</h2>
+        <div class="instruction-box">
+            🌐 <strong>Acesso Obrigatório:</strong> Acesse no seu navegador o site:<br>
+            <strong style="font-size: 1.2em; color: #fef08a;">programiz.com/python-programming/online-compiler</strong>
+        </div>
+        <ul>
+            <li>Não é necessário criar conta nem fazer login.</li>
+            <li>Apague todo o código de exemplo na caixa de texto à esquerda para deixar a tela limpa.</li>
+            <li>À esquerda fica o seu <strong>Editor de Código Python</strong>.</li>
+            <li>À direita fica o <strong>Terminal / Console</strong>, que mostra as mensagens do seu robô.</li>
+        </ul>
+    </div>
+
+    <!-- ETAPA 2: REVISÃO RÁPIDA DOS COMANDOS -->
+    <div class="card">
+        <h2>2️⃣ Relembrando os Comandos Básicos</h2>
+        <p>Antes de aceitar os desafios, relembre a função de cada comando que você usará no código:</p>
+        
+        <h3>🔹 Tomada de Decisão (<code>if / elif / else</code>)</h3>
+        <p>Permite que o programa faça perguntas e tome caminhos diferentes dependendo da resposta:</p>
+        <ul>
+            <li><code>if</code> (SE): Avalia a primeira condição.</li>
+            <li><code>elif</code> (SENÃO SE): Testa uma nova condição caso a anterior seja falsa.</li>
+            <li><code>else</code> (SENÃO): Define o caminho padrão quando nenhuma condição for atendida.</li>
+        </ul>
+
+        <h3>🔹 Repetição Contínua e Emergência (<code>while True</code> e <code>break</code>)</h3>
+        <ul>
+            <li><code>while True:</code> Cria um ciclo de execução contínuo (o robô fica rodando e lendo sensores sem parar).</li>
+            <li><code>break</code>: Interrompe a repetição imediatamente (funciona como o botão de parada de emergência).</li>
+        </ul>
+
+        <h3>🔹 Proteção contra Dados Corrompidos (<code>try / except</code>)</h3>
+        <ul>
+            <li><code>try:</code> Tenta converter ou processar um dado digitado.</li>
+            <li><code>except ValueError:</code> Evita que o programa trave caso o usuário digite texto em vez de números.</li>
+        </ul>
+    </div>
+
+    <!-- ETAPA 3: BATERIA DE DESAFIOS -->
+    <div class="card">
+        <h2>3️⃣ Bateria de Desafios Práticos de Programação</h2>
+        <p>Desenvolva cada um dos códigos abaixo no <strong>Programiz</strong> para validar o funcionamento do seu algoritmo.</p>
+
+        <!-- DESAFIO 1 -->
+        <div class="challenge-card">
+            <div class="challenge-title">🧪 Desafio 1: Validador de Bateria do Robô</div>
+            <p><strong>Cenário:</strong> O seu robô precisa checar o nível da bateria antes de sair para uma entrega e avisar a condição ao operador.</p>
+            <div class="rules-list">
+                <strong>Sua missão:</strong>
+                <ol>
+                    <li>Peça para o usuário digitar o nível de bateria atual (um número de 0 a 100).</li>
+                    <li>Converta a entrada para número inteiro usando <code>int(input())</code>.</li>
+                    <li>Se a bateria for <strong>maior que 70</strong>, exiba: <code>🔋 Bateria cheia! Pronto para rodar.</code></li>
+                    <li>Se estiver <strong>entre 30 e 70</strong>, exiba: <code>🪫 Bateria média. Atenção no percurso.</code></li>
+                    <li>Se for <strong>menor que 30</strong>, exiba: <code>🚨 Bateria fraca! Retorne à estação de carga.</code></li>
+                </ol>
+            </div>
+        </div>
+
+        <!-- DESAFIO 2 -->
+        <div class="challenge-card">
+            <div class="challenge-title">🧪 Desafio 2: Monitor de Temperatura do Motor</div>
+            <p><strong>Cenário:</strong> O motor do carrinho não pode ultrapassar a temperatura limite de 80 °C durante o funcionamento.</p>
+            <div class="rules-list">
+                <strong>Sua missão:</strong>
+                <ol>
+                    <li>Crie um laço de repetição contínuo usando <code>while True:</code>.</li>
+                    <li>Dentro do laço, peça para o usuário digitar a temperatura atual do motor (°C).</li>
+                    <li>Se a temperatura for <strong>maior que 80</strong>, exiba <code>🔥 ALERTA: Superaquecimento! Desligando motores...</code> e encerre o laço usando <code>break</code>.</li>
+                    <li>Caso contrário, exiba <code>🟢 Motor operando normalmente...</code> e continue pedindo novas leituras.</li>
+                </ol>
+            </div>
+        </div>
+
+        <!-- DESAFIO 3 -->
+        <div class="challenge-card">
+            <div class="challenge-title">🧪 Desafio 3: Filtro de Ruído no Sensor</div>
+            <p><strong>Cenário:</strong> Um cabo solto pode fazer o sensor enviar letras ou textos vazios. O código não pode travar!</p>
+            <div class="rules-list">
+                <strong>Sua missão:</strong>
+                <ol>
+                    <li>Solicite a leitura da distância do sensor usando <code>input()</code>.</li>
+                    <li>Use a estrutura <code>try:</code> para tentar converter o texto digitado em um número inteiro com <code>int()</code>.</li>
+                    <li>Se a conversão for bem-sucedida, exiba: <code>✅ Leitura Válida: X cm</code>.</li>
+                    <li>Use <code>except ValueError:</code> para capturar o erro e exibir: <code>⚠️ Erro de leitura: Sensor enviou dado corrompido!</code>.</li>
+                </ol>
+            </div>
+        </div>
+
+        <!-- DESAFIO 4 -->
+        <div class="challenge-card">
+            <div class="challenge-title">🧪 Desafio 4: Sorteador de Rotas de Entrega</div>
+            <p><strong>Cenário:</strong> O carrinho de entrega deve escolher um destino aleatório a cada saída da garagem.</p>
+            <div class="rules-list">
+                <strong>Sua missão:</strong>
+                <ol>
+                    <li>Importe a biblioteca de sorteios adicionando <code>import random</code> na primeira linha do código.</li>
+                    <li>Sorteie um número inteiro entre 1 e 3 usando <code>random.randint(1, 3)</code> e guarde em uma variável.</li>
+                    <li>Se o número sorteado for <strong>1</strong>, exiba: <code>🚚 Rota 1: Entregar no Laboratório 1</code></li>
+                    <li>Se for <strong>2</strong>, exiba: <code>🚚 Rota 2: Entregar na Biblioteca</code></li>
+                    <li>Se for <strong>3</strong>, exiba: <code>🚚 Rota 3: Entregar na Secretaria</code></li>
+                </ol>
+            </div>
+        </div>
+
+        <!-- DESAFIO 5 -->
+        <div class="challenge-card">
+            <div class="challenge-title">🧪 Desafio 5 (Combo Final): Alarme Sonoro de Aproximação</div>
+            <p><strong>Cenário:</strong> Crie um sistema completo de ré/aproximação em malha fechada com proteção contra erros.</p>
+            <div class="rules-list">
+                <strong>Sua missão:</strong>
+                <ol>
+                    <li>Crie um laço contínuo com <code>while True:</code>.</li>
+                    <li>Peça a distância do obstáculo em centímetros.</li>
+                    <li>Trate entradas inválidas usando <code>try/except ValueError:</code>. Se o usuário errar a digitação, exiba um aviso e use <code>continue</code> para recomeçar o loop.</li>
+                    <li>Se a distância for <strong>menor ou igual a 20 cm</strong>, exiba <code>🔴 FREIO DE EMERGÊNCIA ATIVADO!</code> e encerre com <code>break</code>.</li>
+                    <li>Se estiver <strong>entre 21 cm e 50 cm</strong>, exiba: <code>🟡 Cuidado: Obstáculo se aproximando!</code></li>
+                    <li>Se for <strong>maior que 50 cm</strong>, exiba: <code>🟢 Caminho livre</code></li>
+                </ol>
+            </div>
+        </div>
+    </div>
+
+    <!-- ETAPA 4: PRÓXIMOS PASSOS -->
+    <div class="card">
+        <h2>4️⃣ Próxima Etapa: Bancada LEGO® SPIKE™ Prime</h2>
+        <p>Após validar todos os seus códigos no Programiz:</p>
+        <ol>
+            <li>Junte-se com sua equipe na bancada física de robótica.</li>
+            <li>Conecte o Hub do robô **Carrinho de Entrega** ao computador via Bluetooth.</li>
+            <li>Abra o aplicativo **LEGO SPIKE Prime** e crie um projeto em **Python Nativo**.</li>
+            <li>Carregue seu programa no robô e teste o sensor ultrassônico na pista de entregas!</li>
+        </ol>
+    </div>
+
+</div>
+
+</body>
+</html>
